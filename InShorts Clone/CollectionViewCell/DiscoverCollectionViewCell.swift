@@ -14,8 +14,8 @@ class DiscoverCollectionViewCell: UICollectionViewCell, UICollectionViewDataSour
     @IBOutlet weak var bodyCollectionView: UICollectionView!
     @IBOutlet weak var footerCollectionView: UICollectionView!
     let headerImageArray = ["Poll","insights"]
+    
     let footerImageArray = [
-                            "Coronavirus",
                             "India",
                             "Business",
                             "Politics",
