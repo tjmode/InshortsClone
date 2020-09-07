@@ -44,7 +44,7 @@ class MyFeedViewController: UIViewController, UIGestureRecognizerDelegate{
         let backbutton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(moveToDiscoverViewController))
         navigationItem.leftBarButtonItems = [backbutton,discoverButton]
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: nil)
-        navigationItem.title = "My Feed"
+        navigationItem.title = "My News Feed"
         navigationItem.hidesBackButton = false
     }
     
