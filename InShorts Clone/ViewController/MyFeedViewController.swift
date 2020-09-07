@@ -72,35 +72,37 @@ class MyFeedViewController: UIViewController, UIGestureRecognizerDelegate{
             if error != nil {
                 print(error as Any)
                 return
-                //mvvm
             }
-            self.articles = [Articles]()
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
-                if let articlesFromJson = json["articles"] as? [[String: AnyObject]] {
-                    for articleFromJson in articlesFromJson {
-                        let article = Articles()
-                        if let title = articleFromJson["title"] as? String, let author = articleFromJson["author"] as? String, let desc = articleFromJson["description"] as? String, let url = articleFromJson["url"] as? String, let imgUrl = articleFromJson["urlToImage"] as? String {
-                            article.author = author
-                            article.desc = desc
-                            article.headLines = title
-                            article.url = url
-                            article.imgURL = imgUrl
-                        }
-                        self.articles.append(article)
-                    }
-                }
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
+                self.mappingData(from: json)
             } catch let error {
                 print(error)
             }
         }
         task.resume()
     }
-    
+    func mappingData(from json: [String: AnyObject]) {
+        self.articles = [Articles]()
+        if let articlesFromJson = json["articles"] as? [[String: AnyObject]] {
+            for articleFromJson in articlesFromJson {
+                let article = Articles()
+                if let title = articleFromJson["title"] as? String, let author = articleFromJson["author"] as? String, let desc = articleFromJson["description"] as? String, let url = articleFromJson["url"] as? String, let imgUrl = articleFromJson["urlToImage"] as? String {
+                    article.author = author
+                    article.desc = desc
+                    article.headLines = title
+                    article.url = url
+                    article.imgURL = imgUrl
+                }
+                self.articles.append(article)
+            }
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
 }
+
 
 extension MyFeedViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -150,4 +152,6 @@ extension MyFeedViewController: UICollectionViewDataSource, UICollectionViewDele
         let discoverviewController = self.storyboard!.instantiateViewController(identifier: "discoverVC") as! DiscoverViewController
         self.navigationController!.pushViewController(discoverviewController, animated: true)
     }
+    
+    
 }
