@@ -27,7 +27,6 @@ class WebPageViewController: UIViewController {
     }
     
     func loadWebPage(with webViewModel: webPageViewModel) {
-        
         let webPageUrl = URL(string: "\(webViewModel.url)")
         webView.load(URLRequest(url: webPageUrl!))
         title = webViewModel.url?.absoluteString
