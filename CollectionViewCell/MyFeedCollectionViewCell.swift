@@ -9,9 +9,13 @@
 import UIKit
 import Gemini
 
-class CollectionViewCell: GeminiCell {
+class MyFeedCollectionViewCell: GeminiCell {
     @IBOutlet weak var newsDescriptionLabel: UILabel!
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var newsHeadingLabel: UILabel!
     @IBOutlet weak var newsUIView: UIView!
+    
+    func configure(With ViewModel: MyFeedModel) {
+        self.newsDescriptionLabel.text = 
+    }
 }

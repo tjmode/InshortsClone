@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Netwrok layer">
+   </Group>
+   <Group
+      location = "container:"
+      name = "Models">
+   </Group>
+   <Group
+      location = "container:"
+      name = "View Model">
+   </Group>
+   <Group
+      location = "container:"
+      name = "View">
+   </Group>
    <FileRef
       location = "group:InShorts Clone.xcodeproj">
    </FileRef>
