@@ -11,7 +11,7 @@ import WebKit
 
 class WebPageViewController: UIViewController {
     var webView: WKWebView!
-    var url: URL!
+    //var url: URL!
     override func loadView() {
         webView = WKWebView()
         view = webView
@@ -20,10 +20,17 @@ class WebPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //let webPageUrl = URL(string: url)
-        webView.load(URLRequest(url: url))
+        //webView.load(URLRequest(url: url))
         navigationController?.isNavigationBarHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: nil)
-        title = url.absoluteString
+        //title = url.absoluteString
+    }
+    
+    func loadWebPage(with webViewModel: webPageViewModel) {
+        
+        let webPageUrl = URL(string: "\(webViewModel.url)")
+        webView.load(URLRequest(url: webPageUrl!))
+        title = webViewModel.url?.absoluteString
     }
     
  

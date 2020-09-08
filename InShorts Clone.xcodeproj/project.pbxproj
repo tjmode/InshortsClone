@@ -23,8 +23,8 @@
 		94ED2DDD7B490FF505EABE5A /* Pods_InShorts_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198362003CABEE4A0AF3DC07 /* Pods_InShorts_Clone.framework */; };
 		9E6E56C4250769DC00C6DD90 /* apiHit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56C3250769DB00C6DD90 /* apiHit.swift */; };
 		9E6E56C625076ACE00C6DD90 /* mappingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56C525076ACE00C6DD90 /* mappingData.swift */; };
-		9E6E56C825076CB100C6DD90 /* MyFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56C725076CB100C6DD90 /* MyFeedViewModel.swift */; };
 		9E6E56CA25076DD000C6DD90 /* MyFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56C925076DD000C6DD90 /* MyFeedModel.swift */; };
+		9E6E56CE25078E1B00C6DD90 /* webPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56CD25078E1B00C6DD90 /* webPageViewModel.swift */; };
 		9E7DF19B2505FF1300F0DFD6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DF19A2505FF1300F0DFD6 /* CardView.swift */; };
 		9E7DF1A225060B0600F0DFD6 /* CATransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DF1A125060B0600F0DFD6 /* CATransition.swift */; };
 		9E7DF1A52506474C00F0DFD6 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DF1A42506474C00F0DFD6 /* UISearchBar.swift */; };
@@ -53,8 +53,8 @@
 		93B10E4F7F6BDB65C16712FD /* Pods-InShorts Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InShorts Clone.release.xcconfig"; path = "Target Support Files/Pods-InShorts Clone/Pods-InShorts Clone.release.xcconfig"; sourceTree = "<group>"; };
 		9E6E56C3250769DB00C6DD90 /* apiHit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiHit.swift; sourceTree = "<group>"; };
 		9E6E56C525076ACE00C6DD90 /* mappingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mappingData.swift; sourceTree = "<group>"; };
-		9E6E56C725076CB100C6DD90 /* MyFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedViewModel.swift; sourceTree = "<group>"; };
 		9E6E56C925076DD000C6DD90 /* MyFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedModel.swift; sourceTree = "<group>"; };
+		9E6E56CD25078E1B00C6DD90 /* webPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = webPageViewModel.swift; path = "/Users/tonywilson.j/Desktop/swift works/inshorts/webPageViewModel.swift"; sourceTree = "<absolute>"; };
 		9E7DF19A2505FF1300F0DFD6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9E7DF1A125060B0600F0DFD6 /* CATransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransition.swift; sourceTree = "<group>"; };
 		9E7DF1A42506474C00F0DFD6 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
@@ -122,7 +122,6 @@
 			children = (
 				9E7DF1982505FE3700F0DFD6 /* CollectionViewCell */,
 				6693B5AC24F8D54000D01C3A /* MyFeedViewController.swift */,
-				9E6E56C725076CB100C6DD90 /* MyFeedViewModel.swift */,
 				6693B5C424FA6C5B00D01C3A /* DiscoverViewController.swift */,
 				6636603424FCC42000DD5444 /* WebPageViewController.swift */,
 			);
@@ -144,6 +143,7 @@
 			children = (
 				6693B5C224F911C900D01C3A /* Articles.swift */,
 				9E6E56C925076DD000C6DD90 /* MyFeedModel.swift */,
+				9E6E56CD25078E1B00C6DD90 /* webPageViewModel.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -318,10 +318,10 @@
 				9E6E56C625076ACE00C6DD90 /* mappingData.swift in Sources */,
 				6636603524FCC42000DD5444 /* WebPageViewController.swift in Sources */,
 				9E7DF1A9250655FD00F0DFD6 /* UIImageView.swift in Sources */,
+				9E6E56CE25078E1B00C6DD90 /* webPageViewModel.swift in Sources */,
 				6693B5AD24F8D54000D01C3A /* MyFeedViewController.swift in Sources */,
 				6693B5C324F911C900D01C3A /* Articles.swift in Sources */,
 				9E7DF1A225060B0600F0DFD6 /* CATransition.swift in Sources */,
-				9E6E56C825076CB100C6DD90 /* MyFeedViewModel.swift in Sources */,
 				9E7DF1A52506474C00F0DFD6 /* UISearchBar.swift in Sources */,
 				9E6E56C4250769DC00C6DD90 /* apiHit.swift in Sources */,
 				6693B5A924F8D54000D01C3A /* AppDelegate.swift in Sources */,

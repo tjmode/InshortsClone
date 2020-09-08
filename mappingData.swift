@@ -22,6 +22,5 @@ func mappingData(from json: [String: AnyObject]) {
             }
             articles.append(article)
         }
-       
     }
 }
