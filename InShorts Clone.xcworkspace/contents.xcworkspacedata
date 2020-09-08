@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/tonywilson.j/Desktop/swift works/inshorts/webPageViewModel.swift">
+      location = "group:webPageViewModel.swift">
    </FileRef>
    <Group
       location = "container:"

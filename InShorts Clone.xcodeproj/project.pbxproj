@@ -24,7 +24,6 @@
 		9E6E56C4250769DC00C6DD90 /* apiHit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56C3250769DB00C6DD90 /* apiHit.swift */; };
 		9E6E56C625076ACE00C6DD90 /* mappingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56C525076ACE00C6DD90 /* mappingData.swift */; };
 		9E6E56CA25076DD000C6DD90 /* MyFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56C925076DD000C6DD90 /* MyFeedModel.swift */; };
-		9E6E56CE25078E1B00C6DD90 /* webPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E56CD25078E1B00C6DD90 /* webPageViewModel.swift */; };
 		9E7DF19B2505FF1300F0DFD6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DF19A2505FF1300F0DFD6 /* CardView.swift */; };
 		9E7DF1A225060B0600F0DFD6 /* CATransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DF1A125060B0600F0DFD6 /* CATransition.swift */; };
 		9E7DF1A52506474C00F0DFD6 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7DF1A42506474C00F0DFD6 /* UISearchBar.swift */; };
@@ -54,7 +53,6 @@
 		9E6E56C3250769DB00C6DD90 /* apiHit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiHit.swift; sourceTree = "<group>"; };
 		9E6E56C525076ACE00C6DD90 /* mappingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mappingData.swift; sourceTree = "<group>"; };
 		9E6E56C925076DD000C6DD90 /* MyFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedModel.swift; sourceTree = "<group>"; };
-		9E6E56CD25078E1B00C6DD90 /* webPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = webPageViewModel.swift; path = "/Users/tonywilson.j/Desktop/swift works/inshorts/webPageViewModel.swift"; sourceTree = "<absolute>"; };
 		9E7DF19A2505FF1300F0DFD6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9E7DF1A125060B0600F0DFD6 /* CATransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransition.swift; sourceTree = "<group>"; };
 		9E7DF1A42506474C00F0DFD6 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			children = (
 				6693B5C224F911C900D01C3A /* Articles.swift */,
 				9E6E56C925076DD000C6DD90 /* MyFeedModel.swift */,
-				9E6E56CD25078E1B00C6DD90 /* webPageViewModel.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -318,7 +315,6 @@
 				9E6E56C625076ACE00C6DD90 /* mappingData.swift in Sources */,
 				6636603524FCC42000DD5444 /* WebPageViewController.swift in Sources */,
 				9E7DF1A9250655FD00F0DFD6 /* UIImageView.swift in Sources */,
-				9E6E56CE25078E1B00C6DD90 /* webPageViewModel.swift in Sources */,
 				6693B5AD24F8D54000D01C3A /* MyFeedViewController.swift in Sources */,
 				6693B5C324F911C900D01C3A /* Articles.swift in Sources */,
 				9E7DF1A225060B0600F0DFD6 /* CATransition.swift in Sources */,
