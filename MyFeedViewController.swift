@@ -10,11 +10,11 @@ import UIKit
 import Gemini
 
 class MyFeedViewController: UIViewController, UIGestureRecognizerDelegate{
-
+    var copy: jsonData!
     @IBOutlet weak var collectionView: GeminiCollectionView!
     var newsFeedOnTapCount = -1
     var articles: [Articles] = []
-    var selectedNewsUrl = webPageViewModel()
+    var selectedNewsUrl: URL!
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -33,7 +33,37 @@ class MyFeedViewController: UIViewController, UIGestureRecognizerDelegate{
         
         //fetchJsonFromNewsApi(urlString: "https://newsapi.org/v2/top-headlines?country=us&apikey=d5e190072c4a4b039a1ba5df5f7fd9e3")
         
-        fetchJsonFromNewsApi()
+        //fetchJsonFromNewsApi(urlString: "https://newsapi.org/v2/top-headlines?country=us&apikey=d5e190072c4a4b039a1ba5df5f7fd9e3")
+        
+        mappingdata()
+        
+//        DispatchQueue.main.async {
+//            self.collectionView.reloadData()
+//        }
+        
+//        fetchJsonFromNewsApi(urlString: "https://newsapi.org/v2/top-headlines?country=us&apikey=d5e190072c4a4b039a1ba5df5f7fd9e3") { (json, errorMessage) in
+//            self.articles = [Articles]()
+//                    if let articlesFromJson = json?["articles"] as? [[String: AnyObject]] {
+//                        for articleFromJson in articlesFromJson {
+//                            let article = Articles()
+//                            if let title = articleFromJson["title"] as? String, let author = articleFromJson["author"] as? String, let desc = articleFromJson["description"] as? String, let url = articleFromJson["url"] as? String, let imgUrl = articleFromJson["urlToImage"] as? String {
+//                                article.author = author
+//                                article.desc = desc
+//                                article.headLines = title
+//                                article.url = url
+//                                article.imgURL = imgUrl
+//                            }
+//                            self.articles.append(article)
+//                        }
+//                        DispatchQueue.main.async {
+//                            self.collectionView.reloadData()
+//
+//                        }
+//                }
+//            }
+            
+        
+//        fetchJsonFromNewsApi(urlString: "https://newsapi.org/v2/top-headlines?country=us&apikey=d5e190072c4a4b039a1ba5df5f7fd9e3", handler: jsonData)
         navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
       
@@ -50,14 +80,14 @@ class MyFeedViewController: UIViewController, UIGestureRecognizerDelegate{
         navigationItem.hidesBackButton = false
     }
     
+    
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
                 case UISwipeGestureRecognizer.Direction.left:
                     let webPageViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "webPage") as! WebPageViewController
                     self.navigationController?.pushViewController(webPageViewController, animated: true)
-                    print(selectedNewsUrl)
-                    webPageViewController.loadWebPage(with: selectedNewsUrl)
+                    webPageViewController.selectedUrl = selectedNewsUrl
                 case UISwipeGestureRecognizer.Direction.right:
                     let discoverViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "discoverVC")
                     self.navigationController?.view.layer.add(CATransition().pushViewControllerFromLeftSide(), forKey: nil)
@@ -67,42 +97,25 @@ class MyFeedViewController: UIViewController, UIGestureRecognizerDelegate{
             }
         }
     }
+        
     
-    func fetchJsonFromNewsApi() {
-        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&apikey=d5e190072c4a4b039a1ba5df5f7fd9e3")! as URL)
-        let task = URLSession.shared.dataTask(with: urlRequest) {(data, response, error) in
-            if error != nil {
-                print(error as Any)
-                return
-            }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
-                self.mappingData(from: json)
-            } catch let error {
-                print(error)
-            }
-        }
-        task.resume()
-    }
-    func mappingData(from json: [String: AnyObject]) {
-        self.articles = [Articles]()
-        if let articlesFromJson = json["articles"] as? [[String: AnyObject]] {
-            for articleFromJson in articlesFromJson {
-                let article = Articles()
-                if let title = articleFromJson["title"] as? String, let author = articleFromJson["author"] as? String, let desc = articleFromJson["description"] as? String, let url = articleFromJson["url"] as? String, let imgUrl = articleFromJson["urlToImage"] as? String {
-                    article.author = author
-                    article.desc = desc
-                    article.headLines = title
-                    article.url = url
-                    article.imgURL = imgUrl
-                }
-                self.articles.append(article)
-            }
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-    }
+//    func fetchJsonFromNewsApi() {
+//        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&apikey=d5e190072c4a4b039a1ba5df5f7fd9e3")! as URL)
+//        let task = URLSession.shared.dataTask(with: urlRequest) {(data, response, error) in
+//            if error != nil {
+//                print(error as Any)
+//                return
+//            }
+//            do {
+//                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
+//                self.mappingData(from: json)
+//                } catch let error {
+//                    print(error)
+//                }
+//            }
+//            task.resume()
+//        }
+    
 }
 
 
@@ -120,11 +133,9 @@ extension MyFeedViewController: UICollectionViewDataSource, UICollectionViewDele
        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! MyFeedCollectionViewCell
         let model = articles[indexPath.item]
-        let viewModel = MyFeedModel(headLines: model.headLines, desc: model.desc, imgURL: model.imgURL)
-        cell.configure(with: viewModel)
+        cell.configure(with: model)
         self.collectionView.animateCell(cell)
-        let model2 = webPageViewModel(url: URL(string: model.url ?? "")!)
-        selectedNewsUrl.url = model2.url ?? URL(string: "https://www.theverge.com/2020/9/8/21426940/apple-floating-store-singapore-marina-bay-sands-pictures-interior")
+        selectedNewsUrl = URL(string: model.url!)
         return cell
     }
     
@@ -155,6 +166,5 @@ extension MyFeedViewController: UICollectionViewDataSource, UICollectionViewDele
         let discoverviewController = self.storyboard!.instantiateViewController(identifier: "discoverVC") as! DiscoverViewController
         self.navigationController!.pushViewController(discoverviewController, animated: true)
     }
-    
     
 }

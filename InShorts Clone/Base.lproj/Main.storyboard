@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4sW-JP-1zr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="MyFeedViewController" customModule="InShorts_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QuM-X3-zAN" customClass="GeminiCollectionView" customModule="Gemini">
-                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Sh-if-uC9">
                                     <size key="itemSize" width="414" height="828"/>
@@ -26,7 +27,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="j2v-if-UpS" customClass="MyFeedCollectionViewCell" customModule="InShorts_Clone" customModuleProvider="target">
-                                        <rect key="frame" x="93" y="0.0" width="414" height="828"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="828"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="axH-ia-n3H">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="828"/>
@@ -136,12 +137,31 @@
             <objects>
                 <viewController storyboardIdentifier="webPage" title="secondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tSc-K0-dir" userLabel="WebPageViewController" customClass="WebPageViewController" customModule="InShorts_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ODP-NQ-Ddt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUS-5B-B9h">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7rc-Xp-joh" firstAttribute="trailing" secondItem="zUS-5B-B9h" secondAttribute="trailing" id="1cf-0I-6SO"/>
+                            <constraint firstItem="7rc-Xp-joh" firstAttribute="bottom" secondItem="zUS-5B-B9h" secondAttribute="bottom" id="Hxd-Fb-iQE"/>
+                            <constraint firstItem="zUS-5B-B9h" firstAttribute="leading" secondItem="7rc-Xp-joh" secondAttribute="leading" id="pqR-AW-6v5"/>
+                            <constraint firstItem="zUS-5B-B9h" firstAttribute="top" secondItem="7rc-Xp-joh" secondAttribute="top" id="vMe-ur-OPU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7rc-Xp-joh"/>
                     </view>
                     <navigationItem key="navigationItem" id="lM9-3T-1QT"/>
+                    <connections>
+                        <outlet property="webView" destination="zUS-5B-B9h" id="j42-MS-8PA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOP-tP-97j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,11 +172,11 @@
             <objects>
                 <viewController restorationIdentifier="discoverVC" storyboardIdentifier="discoverVC" id="8oy-rQ-X2H" customClass="DiscoverViewController" customModule="InShorts_Clone" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ns-2o-7ed">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-RD-XQg">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q07-Jr-FGc">
                                     <size key="itemSize" width="414" height="735"/>
@@ -166,7 +186,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="masterCell" id="Xe9-63-jaU" customClass="DiscoverCollectionViewCell" customModule="InShorts_Clone" customModuleProvider="target">
-                                        <rect key="frame" x="93" y="0.0" width="414" height="900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yvf-S5-eWO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
@@ -507,7 +527,7 @@
             <objects>
                 <viewController id="RxR-43-4xe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5QT-f5-YXJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="LcX-a7-vra"/>
@@ -524,7 +544,7 @@
             <objects>
                 <viewController id="6Iu-O3-OSg" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xvd-hA-LaP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="nNT-8U-KHX"/>

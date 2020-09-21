@@ -15,7 +15,7 @@ class MyFeedCollectionViewCell: GeminiCell {
     @IBOutlet weak var newsHeadingLabel: UILabel!
     @IBOutlet weak var newsUIView: UIView!
     
-    func configure(with viewModel: MyFeedModel) {
+    func configure(with viewModel: Articles) {
         self.newsDescriptionLabel.text = viewModel.desc
         self.headerImageView.downloadImage(url: viewModel.imgURL ?? "")
         self.newsHeadingLabel.text = viewModel.headLines
